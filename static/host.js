@@ -197,7 +197,9 @@ async function createGame() {
 
     try {
 
-        const response = await fetch("/create");
+        const response = await fetch("/create", {
+            method: "POST"
+        });
 
         const data = await response.json();
 
