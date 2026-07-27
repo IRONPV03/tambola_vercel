@@ -8,8 +8,8 @@ from flask import render_template
 from flask import request
 from flask import redirect
 
-from redis_client import redis_client
-from calls import CALLS
+from api.redis_client import redis_client
+from api.calls import CALLS
 
 app = Flask(
     __name__,
