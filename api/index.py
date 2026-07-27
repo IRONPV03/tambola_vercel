@@ -78,7 +78,7 @@ def host():
     return render_template("host.html")
 
 
-@app.route("/create")
+@app.route("/create", methods=["POST"])
 def create():
 
     game_id = generate_game_id()
