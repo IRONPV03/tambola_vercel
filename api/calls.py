@@ -1,4 +1,4 @@
-TAMBOLA_CALLS = {
+CALLS = {
 
 1:"Kelly's Eye",
 2:"One Little Duck",
