@@ -71,7 +71,7 @@ def join_game():
         game_id=game_id
     )
 
-
+#updated
 @app.route("/host")
 def host():
 
