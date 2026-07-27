@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Tambola Live</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+
+        <h1>🎲 Live Tambola</h1>
+
+        <p>Join a game using the Game ID.</p>
+
+    </header>
+
+
+
+    <!-- Join Card -->
+
+    <section class="card">
+
+        <div class="joinRow">
+
+            <input
+
+                id="gameInput"
+
+                maxlength="6"
+
+                placeholder="Enter Game ID">
+
+            <button
+
+                id="joinBtn"
+
+                class="primary-btn">
+
+                Join Game
+
+            </button>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="field">
+
+                <label>
+
+                    Connected Game
+
+                </label>
+
+                <div
+
+                    id="connectedGame"
+
+                    class="value">
+
+                    -
+
+                </div>
+
+            </div>
+
+            <div class="field">
+
+                <label>
+
+                    Remaining
+
+                </label>
+
+                <div
+
+                    id="remainingCount"
+
+                    class="value">
+
+                    90
+
+                </div>
+
+            </div>
+
+            <div class="field">
+
+                <label>
+
+                    Drawn
+
+                </label>
+
+                <div
+
+                    id="drawnCount"
+
+                    class="value">
+
+                    0
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+
+            id="status"
+
+            class="status">
+
+            Waiting to join...
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Current Number -->
+
+    <section class="current-number">
+
+        <div id="currentNumber">
+
+            --
+
+        </div>
+
+        <div id="currentCall">
+
+            Waiting for host...
+
+        </div>
+
+    </section>
+
+
+
+    <!-- History -->
+
+    <section class="card">
+
+        <h2>
+
+            Recent Numbers
+
+        </h2>
+
+        <div
+
+            id="history"
+
+            class="history">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Board -->
+
+    <section class="card">
+
+        <h2>
+
+            Tambola Board
+
+        </h2>
+
+        <div
+
+            id="board"
+
+            class="board">
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+<div
+
+    id="toast"
+
+    class="toast">
+
+</div>
+
+
+
+<script>
+
+"{{ game_id if game_id else '' }}";
+
+const board=document.getElementById("board");
+
+for(let i=1;i<=90;i++){
+
+    const cell=document.createElement("div");
+
+    cell.className="cell";
+
+    cell.id="cell-"+i;
+
+    cell.innerText=i;
+
+    board.appendChild(cell);
+
+}
+
+</script>
+
+<script src="{{ url_for('static', filename='viewer.js') }}"></script>
+
+</body>
+
+</html>
