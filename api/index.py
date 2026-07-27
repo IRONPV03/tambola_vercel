@@ -64,8 +64,7 @@ def viewer():
 
 
 @app.route("/game/<game_id>")
-def join_game():
-
+def join_game(game_id):
     return render_template(
         "viewer.html",
         game_id=game_id
